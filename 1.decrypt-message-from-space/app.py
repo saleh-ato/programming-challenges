@@ -43,21 +43,22 @@ def spaceMessage(message:str):
         command_indexes=[]
         start,end, word=None, None,''
         words=[]
-        for i in range(len(message)):
-            if message[i]=='[':
-                start=i
-            if message[i]==']':
-                end=i
-            if not(start is None or end is None):
-                command_indexes.append((start,end))
-                start,end=None, None
-        for command_index in command_indexes:
-            for ci in range(command_index[0]+1,command_index[1]):
-                word+=message[ci]
-            words.append(word)
-            word=''
-        for word in words:
-            message=message.replace('['+word+']',proccess_command(word))
+        while '[' in message:
+            for i in range(len(message)):
+                if message[i]=='[':
+                    start=i
+                if message[i]==']':
+                    end=i
+                if not(start is None or end is None):
+                    command_indexes.append((start,end))
+                    start,end=None, None
+            for command_index in command_indexes:
+                for ci in range(command_index[0]+1,command_index[1]):
+                    word+=message[ci]
+                words.append(word)
+                word=''
+            for word in words:
+                message=message.replace('['+word+']',proccess_command(word))
         print(message)
     else:
         print('Your message is not standard! please write your message based on the protocol.')
