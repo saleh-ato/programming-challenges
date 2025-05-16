@@ -3,7 +3,7 @@
 Write a function that interleaves two lists in an alternating fashion, ensuring that elements from both lists are shuffled together. If one list is longer than the other, remaining elements from the longer list are appended at the end.
 ## **Repository Information**
 - **Main Repository:** [Programming Challenges](https://github.com/saleh-ato/programming-challenges)
-- **Folder Path:** `4.brige-shuffle/`
+- **Folder Path:** `4.bridge-shuffle/`
 - **Author:** [Saleh Ato](https://github.com/saleh-ato)
 
 ---
